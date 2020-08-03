@@ -1,6 +1,21 @@
-﻿using Microsoft.Xna.Framework;
+﻿#region Using zone
+
+#region System
+using System;
+using System.Collections.Generic;
+#endregion
+
+#region XNA
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+#endregion
+
+#endregion
+
+#region TODO List
+// TODO: seguir con el tutorial (en min. 2:25).
+#endregion
 
 namespace LetsCreateZeldaDX
 {
@@ -16,6 +31,9 @@ namespace LetsCreateZeldaDX
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            this.graphics.PreferredBackBufferWidth = 320;
+            this.graphics.PreferredBackBufferHeight = 240;
         }
 
         /// <summary>
@@ -73,7 +91,7 @@ namespace LetsCreateZeldaDX
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(new Color(192, 207, 161));
 
             // TODO: Add your drawing code here
 
