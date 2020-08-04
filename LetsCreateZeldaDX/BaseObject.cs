@@ -17,6 +17,26 @@ namespace LetsCreateZeldaDX
             components = new List<Component>();
         }
 
+        public TComponentType GetComponent<TComponentType>(ComponentType componentType) where TComponentType : Component
+        {
+            return components.Find(c => c.ComponentType == componentType) as TComponentType;
+        }
+
+        public void AddComponent(Component component)
+        {
+            components.Add(component);
+            component.Initialize(this);
+        }
+
+        public void AddComponent(List<Component> components)
+        {
+            components.AddRange(components);
+            foreach (var component in components)
+            {
+                component.Initialize(this);
+            }
+        }
+
         public void RemoveComponent(Component component)
         {
             components.Remove(component);

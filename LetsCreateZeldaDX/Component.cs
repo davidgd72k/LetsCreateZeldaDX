@@ -10,6 +10,7 @@ namespace LetsCreateZeldaDX
     abstract class Component
     {
         private BaseObject baseObject;
+        public abstract ComponentType ComponentType { get; }
 
         public void Initialize(BaseObject baseObject)
         {
