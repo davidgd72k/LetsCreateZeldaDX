@@ -48,9 +48,10 @@ namespace LetsCreateZeldaDX.Manager
                 {
                     return;
                 }
-
-                ComputerControlls(gameTime);
             }
+
+            ComputerControlls(gameTime);
+
         }
 
         public void ComputerControlls(double gameTime)

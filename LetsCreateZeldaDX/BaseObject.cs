@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LetsCreateZeldaDX
 {
-    class BaseObject
+    public class BaseObject
     {
         public int Id { get; set; }
         private readonly List<Component> components;

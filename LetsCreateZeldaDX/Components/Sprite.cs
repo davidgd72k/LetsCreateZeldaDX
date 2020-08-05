@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace LetsCreateZeldaDX.Components
 {
-    class Sprite : Component
+    public class Sprite : Component
     {
         private Texture2D texture;
         private int width;
@@ -36,6 +36,11 @@ namespace LetsCreateZeldaDX.Components
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, new Rectangle((int)position.X, (int)position.Y, width, height), Color.White );
+        }
+
+        public void Move(float x, float y)
+        {
+            position = new Vector2(position.X + x, position.Y + y);
         }
     }
 }

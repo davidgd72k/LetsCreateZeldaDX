@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LetsCreateZeldaDX
 {
-    abstract class Component
+    public abstract class Component
     {
         private BaseObject baseObject;
         public abstract ComponentType ComponentType { get; }
@@ -25,6 +25,11 @@ namespace LetsCreateZeldaDX
         public void RemoveMe()
         {
             baseObject.RemoveComponent(this);
+        }
+
+        public TComponentType GetComponent<TComponentType>(ComponentType componentType) where TComponentType : Component
+        {
+            return baseObject.GetComponent<TComponentType>(componentType);
         }
 
         public abstract void Update(double gameTime);

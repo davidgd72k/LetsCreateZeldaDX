@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using LetsCreateZeldaDX.Components;
+using LetsCreateZeldaDX.Manager;
 #endregion
 
 #region XNA
@@ -29,6 +30,7 @@ namespace LetsCreateZeldaDX
         SpriteBatch spriteBatch;
 
         private BaseObject player;
+        private ManagerInput managerInput;
 
         public Game1()
         {
@@ -36,7 +38,7 @@ namespace LetsCreateZeldaDX
             Content.RootDirectory = "Content";
 
             this.graphics.PreferredBackBufferWidth = 320;
-            this.graphics.PreferredBackBufferHeight = 240;
+            this.graphics.PreferredBackBufferHeight = 240;            
         }
 
         /// <summary>
@@ -48,7 +50,8 @@ namespace LetsCreateZeldaDX
         protected override void Initialize()
         {            
             player = new BaseObject();
-
+            managerInput = new ManagerInput();
+            
             base.Initialize();
         }
 
@@ -60,10 +63,9 @@ namespace LetsCreateZeldaDX
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
-            // TODO: seguir desde el punto 5:10 del video.
+            
             player.AddComponent(new Sprite(Content.Load<Texture2D>("Test/link"), 15, 20, new Vector2(50)));
+            player.AddComponent(new PlayerInput()); 
         }
 
         /// <summary>
@@ -85,7 +87,8 @@ namespace LetsCreateZeldaDX
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            managerInput.Update(gameTime.ElapsedGameTime.Milliseconds);
+            player.Update(gameTime.ElapsedGameTime.Milliseconds);
 
             base.Update(gameTime);
         }
