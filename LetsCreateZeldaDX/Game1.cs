@@ -3,6 +3,7 @@
 #region System
 using System;
 using System.Collections.Generic;
+using LetsCreateZeldaDX.Components;
 #endregion
 
 #region XNA
@@ -26,7 +27,9 @@ namespace LetsCreateZeldaDX
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        
+
+        private BaseObject player;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -43,8 +46,8 @@ namespace LetsCreateZeldaDX
         /// and initialize them as well.
         /// </summary>
         protected override void Initialize()
-        {
-            // TODO: Add your initialization logic here
+        {            
+            player = new BaseObject();
 
             base.Initialize();
         }
@@ -59,6 +62,8 @@ namespace LetsCreateZeldaDX
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            // TODO: seguir desde el punto 5:10 del video.
+            player.AddComponent(new Sprite(Content.Load<Texture2D>("Test/link"), 15, 20, new Vector2(50)));
         }
 
         /// <summary>
@@ -94,6 +99,11 @@ namespace LetsCreateZeldaDX
             GraphicsDevice.Clear(new Color(192, 207, 161));
 
             // TODO: Add your drawing code here
+            spriteBatch.Begin();
+
+            player.Draw(spriteBatch);
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
