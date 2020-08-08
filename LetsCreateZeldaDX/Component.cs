@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace LetsCreateZeldaDX
 {
+    // TODO: poner descripción de QUE hace esta clase.
+    /// <summary>
+    /// 
+    /// </summary>
     public abstract class Component
     {
         private BaseObject baseObject;

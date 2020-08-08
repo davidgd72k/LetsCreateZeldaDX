@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace LetsCreateZeldaDX
 {
+    /// <summary>
+    /// Objeto base que puede contener componentes.
+    /// </summary>
     public class BaseObject
     {
         public int Id { get; set; }

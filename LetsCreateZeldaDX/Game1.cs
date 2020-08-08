@@ -64,8 +64,9 @@ namespace LetsCreateZeldaDX
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             
-            player.AddComponent(new Sprite(Content.Load<Texture2D>("Test/link"), 15, 20, new Vector2(50)));
-            player.AddComponent(new PlayerInput()); 
+            player.AddComponent(new Sprite(Content.Load<Texture2D>("Spritesheet/link_full"), 15, 20, new Vector2(50, 60)));
+            player.AddComponent(new PlayerInput());
+            player.AddComponent(new Animation(16, 16));
         }
 
         /// <summary>
