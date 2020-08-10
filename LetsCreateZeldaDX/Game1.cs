@@ -31,6 +31,7 @@ namespace LetsCreateZeldaDX
 
         private BaseObject player;
         private ManagerInput managerInput;
+        private ManagerMap managerMap;
 
         public Game1()
         {
@@ -51,6 +52,7 @@ namespace LetsCreateZeldaDX
         {            
             player = new BaseObject();
             managerInput = new ManagerInput();
+            managerMap = new ManagerMap("test");
             
             base.Initialize();
         }
@@ -67,6 +69,8 @@ namespace LetsCreateZeldaDX
             player.AddComponent(new Sprite(Content.Load<Texture2D>("Spritesheet/link_full"), 15, 20, new Vector2(50, 60)));
             player.AddComponent(new PlayerInput());
             player.AddComponent(new Animation(16, 16));
+
+            managerMap.LoadContent(Content);
         }
 
         /// <summary>
@@ -90,6 +94,7 @@ namespace LetsCreateZeldaDX
 
             managerInput.Update(gameTime.ElapsedGameTime.Milliseconds);
             player.Update(gameTime.ElapsedGameTime.Milliseconds);
+            managerMap.Update(gameTime.ElapsedGameTime.Milliseconds);
 
             base.Update(gameTime);
         }
@@ -105,6 +110,7 @@ namespace LetsCreateZeldaDX
             // TODO: Add your drawing code here
             spriteBatch.Begin();
 
+            managerMap.Draw(spriteBatch);
             player.Draw(spriteBatch);
 
             spriteBatch.End();
