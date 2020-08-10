@@ -1,5 +1,55 @@
 ﻿<?xml version="1.0"?>
 <ArrayOfTile xmlns:xi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!-- XPos, YPos : posición del tile para colocar en el mapa -->
+  <!-- TextureXPos, TextureYPos : posición del tile a obtener del tileset -->
+
+  <!-- Fila 0 del mapa -->
+  <Tile>
+    <XPos>0</XPos>
+    <YPos>0</YPos>
+    <ZPos>1</ZPos>
+    <TextureXPos>1</TextureXPos>
+    <TextureYPos>6</TextureYPos>
+    <TextureName>Tileset/overworld_tileset</TextureName>
+  </Tile>
+
+  <Tile>
+    <XPos>1</XPos>
+    <YPos>0</YPos>
+    <ZPos>1</ZPos>
+    <TextureXPos>1</TextureXPos>
+    <TextureYPos>6</TextureYPos>
+    <TextureName>Tileset/overworld_tileset</TextureName>
+  </Tile>
+
+  <Tile>
+    <XPos>2</XPos>
+    <YPos>0</YPos>
+    <ZPos>1</ZPos>
+    <TextureXPos>1</TextureXPos>
+    <TextureYPos>6</TextureYPos>
+    <TextureName>Tileset/overworld_tileset</TextureName>
+  </Tile>
+
+  <Tile>
+    <XPos>3</XPos>
+    <YPos>0</YPos>
+    <ZPos>1</ZPos>
+    <TextureXPos>1</TextureXPos>
+    <TextureYPos>6</TextureYPos>
+    <TextureName>Tileset/overworld_tileset</TextureName>
+  </Tile>
+
+  <Tile>
+    <XPos>4</XPos>
+    <YPos>0</YPos>
+    <ZPos>1</ZPos>
+    <TextureXPos>1</TextureXPos>
+    <TextureYPos>6</TextureYPos>
+    <TextureName>Tileset/overworld_tileset</TextureName>
+  </Tile>
+
+  <!-- Casa del mapa -->
   <Tile>
     <XPos>1</XPos>
     <YPos>1</YPos>
@@ -8,4 +58,77 @@
     <TextureYPos>0</TextureYPos>
     <TextureName>Tileset/overworld_tileset</TextureName>
   </Tile>
+
+  <Tile>
+    <XPos>2</XPos>
+    <YPos>1</YPos>
+    <ZPos>1</ZPos>
+    <TextureXPos>1</TextureXPos>
+    <TextureYPos>0</TextureYPos>
+    <TextureName>Tileset/overworld_tileset</TextureName>
+  </Tile>
+
+  <Tile>
+    <XPos>3</XPos>
+    <YPos>1</YPos>
+    <ZPos>1</ZPos>
+    <TextureXPos>2</TextureXPos>
+    <TextureYPos>0</TextureYPos>
+    <TextureName>Tileset/overworld_tileset</TextureName>
+  </Tile>
+
+  <Tile>
+    <XPos>1</XPos>
+    <YPos>2</YPos>
+    <ZPos>1</ZPos>
+    <TextureXPos>0</TextureXPos>
+    <TextureYPos>1</TextureYPos>
+    <TextureName>Tileset/overworld_tileset</TextureName>
+  </Tile>
+
+  <Tile>
+    <XPos>2</XPos>
+    <YPos>2</YPos>
+    <ZPos>1</ZPos>
+    <TextureXPos>1</TextureXPos>
+    <TextureYPos>1</TextureYPos>
+    <TextureName>Tileset/overworld_tileset</TextureName>
+  </Tile>
+
+  <Tile>
+    <XPos>3</XPos>
+    <YPos>2</YPos>
+    <ZPos>1</ZPos>
+    <TextureXPos>2</TextureXPos>
+    <TextureYPos>1</TextureYPos>
+    <TextureName>Tileset/overworld_tileset</TextureName>
+  </Tile>
+
+  <Tile>
+    <XPos>1</XPos>
+    <YPos>3</YPos>
+    <ZPos>1</ZPos>
+    <TextureXPos>0</TextureXPos>
+    <TextureYPos>2</TextureYPos>
+    <TextureName>Tileset/overworld_tileset</TextureName>
+  </Tile>
+
+  <Tile>
+    <XPos>2</XPos>
+    <YPos>3</YPos>
+    <ZPos>1</ZPos>
+    <TextureXPos>0</TextureXPos>
+    <TextureYPos>2</TextureYPos>
+    <TextureName>Tileset/overworld_tileset</TextureName>
+  </Tile>
+
+  <Tile>
+    <XPos>3</XPos>
+    <YPos>3</YPos>
+    <ZPos>1</ZPos>
+    <TextureXPos>3</TextureXPos>
+    <TextureYPos>2</TextureYPos>
+    <TextureName>Tileset/overworld_tileset</TextureName>
+  </Tile>
+  
 </ArrayOfTile>
