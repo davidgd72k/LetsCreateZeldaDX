@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+<ArrayOfTile xmlns:xi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Tile>
+    <XPos>1</XPos>
+    <YPos>1</YPos>
+    <ZPos>1</ZPos>
+    <TextureXPos>0</TextureXPos>
+    <TextureYPos>0</TextureYPos>
+    <TextureName>Tileset/overworld_tileset</TextureName>
+  </Tile>
+</ArrayOfTile>
