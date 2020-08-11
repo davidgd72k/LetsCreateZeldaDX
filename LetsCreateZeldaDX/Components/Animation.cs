@@ -42,7 +42,7 @@ namespace LetsCreateZeldaDX.Components
 
                     counter += gameTime;
 
-                    if (counter > 500)
+                    if (counter > 250)
                     {
                         ChangeState();
                         counter = 0;

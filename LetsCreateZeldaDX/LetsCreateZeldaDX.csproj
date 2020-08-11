@@ -55,6 +55,7 @@
     <Compile Include="Manager\ManagerInput.cs" />
     <Compile Include="Manager\ManagerMap.cs" />
     <Compile Include="Map\Tile.cs" />
+    <Compile Include="Map\TileFrame.cs" />
     <Compile Include="MyEventArgs\NewInputEventArgs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

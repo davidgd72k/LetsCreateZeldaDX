@@ -10,7 +10,7 @@
     <ZPos>1</ZPos>
     <TextureXPos>1</TextureXPos>
     <TextureYPos>6</TextureYPos>
-    <TextureName>Tileset/overworld_tileset</TextureName>
+    <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
   <Tile>
@@ -19,7 +19,7 @@
     <ZPos>1</ZPos>
     <TextureXPos>1</TextureXPos>
     <TextureYPos>6</TextureYPos>
-    <TextureName>Tileset/overworld_tileset</TextureName>
+    <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
   <Tile>
@@ -28,7 +28,7 @@
     <ZPos>1</ZPos>
     <TextureXPos>1</TextureXPos>
     <TextureYPos>6</TextureYPos>
-    <TextureName>Tileset/overworld_tileset</TextureName>
+    <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
   <Tile>
@@ -37,7 +37,7 @@
     <ZPos>1</ZPos>
     <TextureXPos>1</TextureXPos>
     <TextureYPos>6</TextureYPos>
-    <TextureName>Tileset/overworld_tileset</TextureName>
+    <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
   <Tile>
@@ -46,7 +46,7 @@
     <ZPos>1</ZPos>
     <TextureXPos>1</TextureXPos>
     <TextureYPos>6</TextureYPos>
-    <TextureName>Tileset/overworld_tileset</TextureName>
+    <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
   <!-- Casa del mapa -->
@@ -56,7 +56,7 @@
     <ZPos>1</ZPos>
     <TextureXPos>0</TextureXPos>
     <TextureYPos>0</TextureYPos>
-    <TextureName>Tileset/overworld_tileset</TextureName>
+    <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
   <Tile>
@@ -65,7 +65,7 @@
     <ZPos>1</ZPos>
     <TextureXPos>1</TextureXPos>
     <TextureYPos>0</TextureYPos>
-    <TextureName>Tileset/overworld_tileset</TextureName>
+    <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
   <Tile>
@@ -74,7 +74,7 @@
     <ZPos>1</ZPos>
     <TextureXPos>2</TextureXPos>
     <TextureYPos>0</TextureYPos>
-    <TextureName>Tileset/overworld_tileset</TextureName>
+    <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
   <Tile>
@@ -83,7 +83,7 @@
     <ZPos>1</ZPos>
     <TextureXPos>0</TextureXPos>
     <TextureYPos>1</TextureYPos>
-    <TextureName>Tileset/overworld_tileset</TextureName>
+    <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
   <Tile>
@@ -92,7 +92,7 @@
     <ZPos>1</ZPos>
     <TextureXPos>1</TextureXPos>
     <TextureYPos>1</TextureYPos>
-    <TextureName>Tileset/overworld_tileset</TextureName>
+    <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
   <Tile>
@@ -101,7 +101,7 @@
     <ZPos>1</ZPos>
     <TextureXPos>2</TextureXPos>
     <TextureYPos>1</TextureYPos>
-    <TextureName>Tileset/overworld_tileset</TextureName>
+    <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
   <Tile>
@@ -110,7 +110,7 @@
     <ZPos>1</ZPos>
     <TextureXPos>0</TextureXPos>
     <TextureYPos>2</TextureYPos>
-    <TextureName>Tileset/overworld_tileset</TextureName>
+    <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
   <Tile>
@@ -119,7 +119,7 @@
     <ZPos>1</ZPos>
     <TextureXPos>0</TextureXPos>
     <TextureYPos>2</TextureYPos>
-    <TextureName>Tileset/overworld_tileset</TextureName>
+    <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
   <Tile>
@@ -128,7 +128,7 @@
     <ZPos>1</ZPos>
     <TextureXPos>3</TextureXPos>
     <TextureYPos>2</TextureYPos>
-    <TextureName>Tileset/overworld_tileset</TextureName>
+    <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
   
 </ArrayOfTile>
