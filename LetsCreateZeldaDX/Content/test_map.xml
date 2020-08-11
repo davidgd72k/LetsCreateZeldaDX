@@ -7,9 +7,14 @@
   <Tile>
     <XPos>0</XPos>
     <YPos>0</YPos>
-    <ZPos>1</ZPos>
-    <TextureXPos>1</TextureXPos>
-    <TextureYPos>6</TextureYPos>
+    <ZPos>1</ZPos>    
+    <TileFrames>
+      <TileFrame>
+        <TextureXPos>1</TextureXPos>
+        <TextureYPos>6</TextureYPos>
+      </TileFrame>
+    </TileFrames>
+    <AnimationSpeed>0</AnimationSpeed>
     <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
@@ -17,17 +22,27 @@
     <XPos>1</XPos>
     <YPos>0</YPos>
     <ZPos>1</ZPos>
-    <TextureXPos>1</TextureXPos>
-    <TextureYPos>6</TextureYPos>
+    <TileFrames>
+      <TileFrame>
+        <TextureXPos>1</TextureXPos>
+        <TextureYPos>6</TextureYPos>
+      </TileFrame>
+    </TileFrames>
+    <AnimationSpeed>0</AnimationSpeed>
     <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
   <Tile>
     <XPos>2</XPos>
     <YPos>0</YPos>
-    <ZPos>1</ZPos>
-    <TextureXPos>1</TextureXPos>
-    <TextureYPos>6</TextureYPos>
+    <ZPos>1</ZPos>    
+    <TileFrames>
+      <TileFrame>
+        <TextureXPos>1</TextureXPos>
+        <TextureYPos>6</TextureYPos>
+      </TileFrame>
+    </TileFrames>
+    <AnimationSpeed>0</AnimationSpeed>
     <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
@@ -35,8 +50,13 @@
     <XPos>3</XPos>
     <YPos>0</YPos>
     <ZPos>1</ZPos>
-    <TextureXPos>1</TextureXPos>
-    <TextureYPos>6</TextureYPos>
+    <TileFrames>
+      <TileFrame>
+        <TextureXPos>1</TextureXPos>
+        <TextureYPos>6</TextureYPos>
+      </TileFrame>
+    </TileFrames>
+    <AnimationSpeed>0</AnimationSpeed>
     <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
@@ -44,8 +64,13 @@
     <XPos>4</XPos>
     <YPos>0</YPos>
     <ZPos>1</ZPos>
-    <TextureXPos>1</TextureXPos>
-    <TextureYPos>6</TextureYPos>
+    <TileFrames>
+      <TileFrame>
+        <TextureXPos>1</TextureXPos>
+        <TextureYPos>6</TextureYPos>
+      </TileFrame>
+    </TileFrames>
+    <AnimationSpeed>0</AnimationSpeed>
     <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
@@ -54,8 +79,13 @@
     <XPos>1</XPos>
     <YPos>1</YPos>
     <ZPos>1</ZPos>
-    <TextureXPos>0</TextureXPos>
-    <TextureYPos>0</TextureYPos>
+    <TileFrames>
+      <TileFrame>
+        <TextureXPos>0</TextureXPos>
+        <TextureYPos>0</TextureYPos>
+      </TileFrame>
+    </TileFrames>
+    <AnimationSpeed>0</AnimationSpeed>
     <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
@@ -63,8 +93,13 @@
     <XPos>2</XPos>
     <YPos>1</YPos>
     <ZPos>1</ZPos>
-    <TextureXPos>1</TextureXPos>
-    <TextureYPos>0</TextureYPos>
+    <TileFrames>
+      <TileFrame>
+        <TextureXPos>1</TextureXPos>
+        <TextureYPos>0</TextureYPos>
+      </TileFrame>
+    </TileFrames>
+    <AnimationSpeed>0</AnimationSpeed>
     <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
@@ -72,8 +107,13 @@
     <XPos>3</XPos>
     <YPos>1</YPos>
     <ZPos>1</ZPos>
-    <TextureXPos>2</TextureXPos>
-    <TextureYPos>0</TextureYPos>
+    <TileFrames>
+      <TileFrame>
+        <TextureXPos>2</TextureXPos>
+        <TextureYPos>0</TextureYPos>
+      </TileFrame>
+    </TileFrames>
+    <AnimationSpeed>0</AnimationSpeed>
     <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
@@ -81,8 +121,13 @@
     <XPos>1</XPos>
     <YPos>2</YPos>
     <ZPos>1</ZPos>
-    <TextureXPos>0</TextureXPos>
-    <TextureYPos>1</TextureYPos>
+    <TileFrames>
+      <TileFrame>
+        <TextureXPos>0</TextureXPos>
+        <TextureYPos>1</TextureYPos>
+      </TileFrame>
+    </TileFrames>
+    <AnimationSpeed>0</AnimationSpeed>
     <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
@@ -90,8 +135,13 @@
     <XPos>2</XPos>
     <YPos>2</YPos>
     <ZPos>1</ZPos>
-    <TextureXPos>1</TextureXPos>
-    <TextureYPos>1</TextureYPos>
+    <TileFrames>
+      <TileFrame>
+        <TextureXPos>1</TextureXPos>
+        <TextureYPos>1</TextureYPos>
+      </TileFrame>
+    </TileFrames>
+    <AnimationSpeed>0</AnimationSpeed>
     <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
@@ -99,8 +149,13 @@
     <XPos>3</XPos>
     <YPos>2</YPos>
     <ZPos>1</ZPos>
-    <TextureXPos>2</TextureXPos>
-    <TextureYPos>1</TextureYPos>
+    <TileFrames>
+      <TileFrame>
+        <TextureXPos>2</TextureXPos>
+        <TextureYPos>1</TextureYPos>
+      </TileFrame>
+    </TileFrames>
+    <AnimationSpeed>0</AnimationSpeed>
     <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
@@ -108,8 +163,13 @@
     <XPos>1</XPos>
     <YPos>3</YPos>
     <ZPos>1</ZPos>
-    <TextureXPos>0</TextureXPos>
-    <TextureYPos>2</TextureYPos>
+    <TileFrames>
+      <TileFrame>
+        <TextureXPos>0</TextureXPos>
+        <TextureYPos>2</TextureYPos>
+      </TileFrame>
+    </TileFrames>
+    <AnimationSpeed>0</AnimationSpeed>
     <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
@@ -117,8 +177,13 @@
     <XPos>2</XPos>
     <YPos>3</YPos>
     <ZPos>1</ZPos>
-    <TextureXPos>0</TextureXPos>
-    <TextureYPos>2</TextureYPos>
+    <TileFrames>
+      <TileFrame>
+        <TextureXPos>0</TextureXPos>
+        <TextureYPos>2</TextureYPos>
+      </TileFrame>
+    </TileFrames>
+    <AnimationSpeed>0</AnimationSpeed>
     <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
 
@@ -126,9 +191,92 @@
     <XPos>3</XPos>
     <YPos>3</YPos>
     <ZPos>1</ZPos>
-    <TextureXPos>3</TextureXPos>
-    <TextureYPos>2</TextureYPos>
+    <TileFrames>
+      <TileFrame>
+        <TextureXPos>3</TextureXPos>
+        <TextureYPos>2</TextureYPos>
+      </TileFrame>
+    </TileFrames>
+    <AnimationSpeed>0</AnimationSpeed>
     <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
   
+  <!-- Tiles animados -->
+  <Tile>
+    <XPos>6</XPos>
+    <YPos>6</YPos>
+    <ZPos>1</ZPos>
+    <TileFrames>
+      <TileFrame>
+        <TextureXPos>16</TextureXPos>
+        <TextureYPos>15</TextureYPos>
+      </TileFrame>
+      <TileFrame>
+        <TextureXPos>17</TextureXPos>
+        <TextureYPos>15</TextureYPos>
+      </TileFrame>
+      <TileFrame>
+        <TextureXPos>18</TextureXPos>
+        <TextureYPos>15</TextureYPos>
+      </TileFrame>
+      <TileFrame>
+        <TextureXPos>19</TextureXPos>
+        <TextureYPos>15</TextureYPos>
+      </TileFrame>
+    </TileFrames>
+    <AnimationSpeed>200</AnimationSpeed>
+    <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
+  </Tile>
+  
+  <Tile>
+    <XPos>7</XPos>
+    <YPos>7</YPos>
+    <ZPos>1</ZPos>
+    <TileFrames>
+      <TileFrame>
+        <TextureXPos>16</TextureXPos>
+        <TextureYPos>17</TextureYPos>
+      </TileFrame>
+      <TileFrame>
+        <TextureXPos>17</TextureXPos>
+        <TextureYPos>17</TextureYPos>
+      </TileFrame>
+      <TileFrame>
+        <TextureXPos>18</TextureXPos>
+        <TextureYPos>17</TextureYPos>
+      </TileFrame>
+      <TileFrame>
+        <TextureXPos>19</TextureXPos>
+        <TextureYPos>17</TextureYPos>
+      </TileFrame>
+    </TileFrames>
+    <AnimationSpeed>200</AnimationSpeed>
+    <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
+  </Tile>
+
+  <Tile>
+    <XPos>8</XPos>
+    <YPos>6</YPos>
+    <ZPos>1</ZPos>
+    <TileFrames>
+      <TileFrame>
+        <TextureXPos>16</TextureXPos>
+        <TextureYPos>19</TextureYPos>
+      </TileFrame>
+      <TileFrame>
+        <TextureXPos>17</TextureXPos>
+        <TextureYPos>19</TextureYPos>
+      </TileFrame>
+      <TileFrame>
+        <TextureXPos>18</TextureXPos>
+        <TextureYPos>19</TextureYPos>
+      </TileFrame>
+      <TileFrame>
+        <TextureXPos>19</TextureXPos>
+        <TextureYPos>19</TextureYPos>
+      </TileFrame>
+    </TileFrames>
+    <AnimationSpeed>200</AnimationSpeed>
+    <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
+  </Tile>
 </ArrayOfTile>
