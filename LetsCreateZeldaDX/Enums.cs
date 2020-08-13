@@ -3,6 +3,7 @@
     Sprite
     , PlayerInput
     , Animation
+    , Collision
 }
 
 public enum Input

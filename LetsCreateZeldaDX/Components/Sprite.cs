@@ -11,9 +11,9 @@ namespace LetsCreateZeldaDX.Components
     public class Sprite : Component
     {
         private Texture2D texture;
-        private int width;
-        private int height;
-        private Vector2 position;
+        public int Width { get; private set; }
+        public int Height { get; private set; }
+        public Vector2 Position { get; private set; }
 
         public override ComponentType ComponentType
         {
@@ -23,9 +23,9 @@ namespace LetsCreateZeldaDX.Components
         public Sprite(Texture2D texture, int width, int height, Vector2 position)
         {
             this.texture = texture;
-            this.width = width;
-            this.height = height;
-            this.position = position;
+            this.Width = width;
+            this.Height = height;
+            this.Position = position;
         }
 
         public override void Update(double gameTime)
@@ -41,7 +41,7 @@ namespace LetsCreateZeldaDX.Components
             {
                 spriteBatch.Draw(
                     texture
-                    , new Rectangle((int)position.X, (int)position.Y, width, height)
+                    , new Rectangle((int)Position.X, (int)Position.Y, Width, Height)
                     , animation.TextureRectangle
                     , Color.White
                     );
@@ -50,7 +50,7 @@ namespace LetsCreateZeldaDX.Components
             {
                 spriteBatch.Draw(
                     texture
-                    , new Rectangle((int)position.X, (int)position.Y, width, height)
+                    , new Rectangle((int)Position.X, (int)Position.Y, Width, Height)
                     , Color.White 
                     );
             }
@@ -58,7 +58,7 @@ namespace LetsCreateZeldaDX.Components
 
         public void Move(float x, float y)
         {
-            position = new Vector2(position.X + x, position.Y + y);
+            Position = new Vector2(Position.X + x, Position.Y + y);
 
             var animation = GetComponent<Animation>(ComponentType.Animation);
 
