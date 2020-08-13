@@ -3,8 +3,6 @@
 #region System
 using System;
 using System.Collections.Generic;
-using LetsCreateZeldaDX.Components;
-using LetsCreateZeldaDX.Manager;
 #endregion
 
 #region XNA
@@ -13,10 +11,16 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 #endregion
 
+#region LetsCreateZeldaDX
+using LetsCreateZeldaDX.Components;
+using LetsCreateZeldaDX.Components.Movement;
+using LetsCreateZeldaDX.Manager;
+#endregion
+
 #endregion
 
 #region TODO List
-// TODO: seguir con el tutorial (en min. 2:25).
+
 #endregion
 
 namespace LetsCreateZeldaDX
@@ -30,6 +34,7 @@ namespace LetsCreateZeldaDX
         SpriteBatch spriteBatch;
 
         private BaseObject player;
+        private BaseObject testNPC;
         private ManagerInput managerInput;
         private ManagerMap managerMap;
 
@@ -38,8 +43,8 @@ namespace LetsCreateZeldaDX
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            this.graphics.PreferredBackBufferWidth = 320;
-            this.graphics.PreferredBackBufferHeight = 240;            
+            this.graphics.PreferredBackBufferWidth = 160;
+            this.graphics.PreferredBackBufferHeight = 128;            
         }
 
         /// <summary>
@@ -51,6 +56,7 @@ namespace LetsCreateZeldaDX
         protected override void Initialize()
         {            
             player = new BaseObject();
+            testNPC = new BaseObject();
             managerInput = new ManagerInput();
             managerMap = new ManagerMap("test");
             
@@ -66,10 +72,15 @@ namespace LetsCreateZeldaDX
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             
-            player.AddComponent(new Sprite(Content.Load<Texture2D>("Spritesheet/link_full"), 15, 20, new Vector2(50, 60)));
+            player.AddComponent(new Sprite(Content.Load<Texture2D>("Spritesheet/link_full"), 16, 16, new Vector2(50, 60)));
             player.AddComponent(new PlayerInput());
             player.AddComponent(new Animation(16, 16));
             player.AddComponent(new Collision(managerMap));
+
+            testNPC.AddComponent(new Sprite(Content.Load<Texture2D>("Spritesheet/Marin"), 16, 16, new Vector2(60, 20)));
+            testNPC.AddComponent(new AIMovementRandom(200));
+            testNPC.AddComponent(new Animation(16, 16));
+            testNPC.AddComponent(new Collision(managerMap));
 
             managerMap.LoadContent(Content);
         }
@@ -95,6 +106,7 @@ namespace LetsCreateZeldaDX
 
             managerInput.Update(gameTime.ElapsedGameTime.Milliseconds);
             player.Update(gameTime.ElapsedGameTime.Milliseconds);
+            testNPC.Update(gameTime.ElapsedGameTime.Milliseconds);
             managerMap.Update(gameTime.ElapsedGameTime.Milliseconds);
 
             base.Update(gameTime);
@@ -113,6 +125,7 @@ namespace LetsCreateZeldaDX
 
             managerMap.Draw(spriteBatch);
             player.Draw(spriteBatch);
+            testNPC.Draw(spriteBatch);
 
             spriteBatch.End();
 

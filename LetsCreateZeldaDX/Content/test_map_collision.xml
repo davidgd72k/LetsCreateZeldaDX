@@ -34,4 +34,14 @@
     <XPos>3</XPos>
     <YPos>2</YPos>
   </TileCollision>
+
+<TileCollision>
+    <XPos>1</XPos>
+    <YPos>3</YPos>
+  </TileCollision>
+
+  <TileCollision>
+    <XPos>2</XPos>
+    <YPos>3</YPos>
+  </TileCollision>
 </ArrayOfTileCollision>

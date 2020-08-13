@@ -279,10 +279,11 @@
     <AnimationSpeed>200</AnimationSpeed>
     <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
-
+  
+  <!-- Charco de agua -->
   <Tile>
-    <XPos>8</XPos>
-    <YPos>10</YPos>
+    <XPos>6</XPos>
+    <YPos>2</YPos>
     <ZPos>1</ZPos>
     <TileFrames>
       <TileFrame>
@@ -307,8 +308,8 @@
   </Tile>
 
   <Tile>
-    <XPos>9</XPos>
-    <YPos>10</YPos>
+    <XPos>7</XPos>
+    <YPos>2</YPos>
     <ZPos>1</ZPos>
     <TileFrames>
       <TileFrame>
@@ -333,8 +334,8 @@
   </Tile>
 
   <Tile>
-    <XPos>8</XPos>
-    <YPos>11</YPos>
+    <XPos>6</XPos>
+    <YPos>3</YPos>
     <ZPos>1</ZPos>
     <TileFrames>
       <TileFrame>
@@ -359,8 +360,8 @@
   </Tile>
 
   <Tile>
-    <XPos>9</XPos>
-    <YPos>11</YPos>
+    <XPos>7</XPos>
+    <YPos>3</YPos>
     <ZPos>1</ZPos>
     <TileFrames>
       <TileFrame>

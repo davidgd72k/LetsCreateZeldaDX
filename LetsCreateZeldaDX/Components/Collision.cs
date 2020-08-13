@@ -42,9 +42,15 @@ namespace LetsCreateZeldaDX.Components
         #endregion
 
         #region Other methods
-        public bool CheckCollision(Rectangle rectangle)
+        public bool CheckCollision(Rectangle rectangle, bool fixBox = true)
         {
-            return this.managerMap.CheckCollision(rectangle);
+            rectangle = new Rectangle(
+                (int) (rectangle.X + (rectangle.Width * 0.4) / 2)
+                , (int) (rectangle.Y + rectangle.Height * 0.5)
+                , (int) (rectangle.Width * 0.6)
+                , (int) (rectangle.Height * 0.5)
+                );
+            return managerMap.CheckCollision(rectangle);
         }
         #endregion
     }

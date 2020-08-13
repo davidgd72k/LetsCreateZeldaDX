@@ -4,6 +4,7 @@
     , PlayerInput
     , Animation
     , Collision
+    , AIMovement
 }
 
 public enum Input
