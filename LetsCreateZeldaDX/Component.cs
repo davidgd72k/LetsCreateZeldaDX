@@ -33,7 +33,7 @@ namespace LetsCreateZeldaDX
 
         public TComponentType GetComponent<TComponentType>(ComponentType componentType) where TComponentType : Component
         {
-            return baseObject.GetComponent<TComponentType>(componentType);
+            return baseObject == null ? null : baseObject.GetComponent<TComponentType>(componentType);
         }
 
         public abstract void Update(double gameTime);

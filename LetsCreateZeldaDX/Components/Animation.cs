@@ -16,7 +16,7 @@ namespace LetsCreateZeldaDX.Components
         }
 
         public Rectangle TextureRectangle { get; private set; }
-        public Direction currentDirection;
+        public Direction CurrentDirection;
 
         private int width;
         private int height;
@@ -59,7 +59,7 @@ namespace LetsCreateZeldaDX.Components
 
         private void ChangeState()
         {
-            switch (currentDirection)
+            switch (CurrentDirection)
             {
                 case Direction.Up:
 
@@ -92,14 +92,14 @@ namespace LetsCreateZeldaDX.Components
 
         public void ResetCounter(State state, Direction direction)
         {
-            if (currentDirection != direction)
+            if (CurrentDirection != direction)
             {
                 counter = 1000;
                 animationIndex = 0;
             }
 
             currentState = state;
-            currentDirection = direction;
+            CurrentDirection = direction;
         }
     }
 }

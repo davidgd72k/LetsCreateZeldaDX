@@ -14,6 +14,7 @@ namespace LetsCreateZeldaDX.Components.Movement
         private Direction currentDirection;
         private readonly int frequency;
         private double counter;
+        private float speed;
 
         public override ComponentType ComponentType
         {
@@ -22,9 +23,10 @@ namespace LetsCreateZeldaDX.Components.Movement
 
 
         #region Constructores
-        public AIMovementRandom(int frequency)
+        public AIMovementRandom(int frequency, float speed = 1.5f)
         {
             this.frequency = frequency;
+            this.speed = speed;
             ChangeDirection();
         }
         #endregion
@@ -52,19 +54,19 @@ namespace LetsCreateZeldaDX.Components.Movement
             switch (currentDirection)
             {
                 case Direction.Up:
-                    y = -1.5f;
+                    y = speed * -1;
                     break;
 
                 case Direction.Down:
-                    y = 1.5f;
+                    y = speed;
                     break;
 
                 case Direction.Left:
-                    x = -1.5f;
+                    x = speed * -1;
                     break;
 
                 case Direction.Right:
-                    x = 1.5f;
+                    x = speed;
                     break;
                 default:
                     return;

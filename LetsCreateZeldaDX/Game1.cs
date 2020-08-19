@@ -15,12 +15,13 @@ using Microsoft.Xna.Framework.Input;
 using LetsCreateZeldaDX.Components;
 using LetsCreateZeldaDX.Components.Movement;
 using LetsCreateZeldaDX.Manager;
+using LetsCreateZeldaDX.Components.Enemies;
 #endregion
 
 #endregion
 
 #region TODO List
-
+// TODO: seguir del vídeo Parte 8 desde el min. 05:37.
 #endregion
 
 namespace LetsCreateZeldaDX
@@ -35,6 +36,8 @@ namespace LetsCreateZeldaDX
 
         private BaseObject player;
         private BaseObject testNPC;
+        private BaseObject testEnemy;
+
         private ManagerInput managerInput;
         private ManagerMap managerMap;
 
@@ -57,6 +60,8 @@ namespace LetsCreateZeldaDX
         {            
             player = new BaseObject();
             testNPC = new BaseObject();
+            testEnemy = new BaseObject();
+
             managerInput = new ManagerInput();
             managerMap = new ManagerMap("test");
             
@@ -72,15 +77,21 @@ namespace LetsCreateZeldaDX
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             
-            player.AddComponent(new Sprite(Content.Load<Texture2D>("Spritesheet/link_full"), 16, 16, new Vector2(50, 60)));
+            player.AddComponent(new Sprite(Content.Load<Texture2D>("Sprites/link_full"), 16, 16, new Vector2(50, 60)));
             player.AddComponent(new PlayerInput());
             player.AddComponent(new Animation(16, 16));
             player.AddComponent(new Collision(managerMap));
 
-            testNPC.AddComponent(new Sprite(Content.Load<Texture2D>("Spritesheet/Marin"), 16, 16, new Vector2(60, 20)));
+            testNPC.AddComponent(new Sprite(Content.Load<Texture2D>("Sprites/Marin"), 16, 16, new Vector2(60, 20)));
             testNPC.AddComponent(new AIMovementRandom(200));
             testNPC.AddComponent(new Animation(16, 16));
             testNPC.AddComponent(new Collision(managerMap));
+
+            testEnemy.AddComponent(new Sprite(Content.Load<Texture2D>("Sprites/Octorok"), 16, 16, new Vector2(80, 20)));
+            testEnemy.AddComponent(new AIMovementRandom(1000, 0.5f));
+            testEnemy.AddComponent(new Animation(16, 16));
+            testEnemy.AddComponent(new Collision(managerMap));
+            testEnemy.AddComponent(new Octorok(player, Content.Load<Texture2D>("Sprites/Octorok_bullet"), managerMap));
 
             managerMap.LoadContent(Content);
         }
@@ -105,8 +116,11 @@ namespace LetsCreateZeldaDX
                 Exit();
 
             managerInput.Update(gameTime.ElapsedGameTime.Milliseconds);
+
             player.Update(gameTime.ElapsedGameTime.Milliseconds);
             testNPC.Update(gameTime.ElapsedGameTime.Milliseconds);
+            testEnemy.Update(gameTime.ElapsedGameTime.Milliseconds);            
+
             managerMap.Update(gameTime.ElapsedGameTime.Milliseconds);
 
             base.Update(gameTime);
@@ -124,8 +138,10 @@ namespace LetsCreateZeldaDX
             spriteBatch.Begin();
 
             managerMap.Draw(spriteBatch);
+
             player.Draw(spriteBatch);
             testNPC.Draw(spriteBatch);
+            testEnemy.Draw(spriteBatch);
 
             spriteBatch.End();
 
