@@ -13,43 +13,47 @@ namespace LetsCreateZeldaDX.Manager
 {
     public class ManagerMap
     {
-        private List<Tile> tiles;
-        private List<TileCollision> tileCollisions;
-        private string mapName;
+        private List<Tile> _tiles;
+        private List<TileCollision> _tileCollisions;
+        private string _mapName;
+        private ManagerCamera _managerCamera;
 
-        public ManagerMap(string mapName)
+        public ManagerMap(string mapName, ManagerCamera managerCamera)
         {
-            tiles = new List<Tile>();
-            tileCollisions = new List<TileCollision>();
-            this.mapName = mapName;
+            _tiles = new List<Tile>();
+            _tileCollisions = new List<TileCollision>();
+            _mapName = mapName;
+            _managerCamera = managerCamera;
         }
 
         public void LoadContent(ContentManager content)
         {
             var tiles = new List<Tile>();
-            XMLSerialization.LoadXML(out tiles, string.Format("Content\\{0}_map.xml", mapName));
+            XMLSerialization.LoadXML(out tiles, string.Format("Content\\{0}_map.xml", _mapName));
             if (tiles != null)
             {
-                this.tiles = tiles;
-                this.tiles.Sort((n, i) => n.ZPos > i.ZPos ? 1 : 0);
+                _tiles = tiles;
+                _tiles.Sort((n, i) => n.ZPos > i.ZPos ? 1 : 0);
 
-                foreach (var tile in this.tiles)
+                foreach (var tile in this._tiles)
                 {
                     tile.LoadContent(content);
+                    tile.ManagerCamera = _managerCamera;
                 }
             }
 
             var tilesCollision = new List<TileCollision>();
-            XMLSerialization.LoadXML(out tilesCollision, string.Format("Content\\{0}_map_collision.xml", mapName));
+            XMLSerialization.LoadXML(out tilesCollision, string.Format("Content\\{0}_map_collision.xml", _mapName));
             if (tilesCollision != null)
             {
-                this.tileCollisions = tilesCollision;
+                _tileCollisions = tilesCollision;
+                _tileCollisions.ForEach(t => t.ManagerCamera = _managerCamera);
             }
         }
 
         public void Update(double gameTime)
         {
-            foreach (var tile in this.tiles)
+            foreach (var tile in _tiles)
             {
                 tile.Update(gameTime);
             }
@@ -57,7 +61,7 @@ namespace LetsCreateZeldaDX.Manager
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (var tile in this.tiles)
+            foreach (var tile in _tiles)
             {
                 tile.Draw(spriteBatch);
             }
@@ -65,7 +69,7 @@ namespace LetsCreateZeldaDX.Manager
 
         public bool CheckCollision(Rectangle rectangle)
         {
-            return this.tileCollisions.Any(tile => tile.Intersect(rectangle));
+            return _tileCollisions.Any(tile => tile.Intersect(rectangle));
         }
     }
 }

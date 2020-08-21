@@ -10,12 +10,12 @@ namespace LetsCreateZeldaDX.Manager
 {
     public class ManagerInput
     {
-        private KeyboardState keyState;
-        private KeyboardState lastKeyState;
-        private Keys lastKey;
+        private KeyboardState _keyState;
+        private KeyboardState _lastKeyState;
+        private Keys _lastKey;
         private static event EventHandler<NewInputEventArgs> _FireNewInput;
-        private double counter;
-        private static double cooldown;
+        private double _counter;
+        private static double _cooldown;
 
         public static event EventHandler<NewInputEventArgs> FireNewInput
         {
@@ -30,19 +30,19 @@ namespace LetsCreateZeldaDX.Manager
         {
             ThrottleInput = false;
             LockMovement = false;
-            counter = 0;
+            _counter = 0;
         }
 
         public void Update(double gameTime)
         {
-            if (cooldown > 0)
+            if (_cooldown > 0)
             {
-                counter += gameTime;
+                _counter += gameTime;
 
-                if (counter > gameTime)
+                if (_counter > gameTime)
                 {
-                    cooldown = 0;
-                    counter = 0;
+                    _cooldown = 0;
+                    _counter = 0;
                 }
                 else
                 {
@@ -56,9 +56,9 @@ namespace LetsCreateZeldaDX.Manager
 
         public void ComputerControlls(double gameTime)
         {
-            keyState = Keyboard.GetState();
+            _keyState = Keyboard.GetState();
 
-            if (keyState.IsKeyUp(lastKey) && lastKey != Keys.None)
+            if (_keyState.IsKeyUp(_lastKey) && _lastKey != Keys.None)
             {
                 if (_FireNewInput != null)
                 {
@@ -71,19 +71,19 @@ namespace LetsCreateZeldaDX.Manager
             CheckKeyState(Keys.Up, Input.Up);
             CheckKeyState(Keys.Down, Input.Down);
 
-            lastKeyState = keyState;
+            _lastKeyState = _keyState;
         }
 
         private void CheckKeyState(Keys key, Input fireInput)
         {
-            if (keyState.IsKeyDown(key))
+            if (_keyState.IsKeyDown(key))
             {
-                if (!ThrottleInput || (ThrottleInput && lastKeyState.IsKeyUp(key)))
+                if (!ThrottleInput || (ThrottleInput && _lastKeyState.IsKeyUp(key)))
                 {
                     if (_FireNewInput != null)
                     {
                         _FireNewInput(this, new NewInputEventArgs(fireInput));
-                        lastKey = key;
+                        _lastKey = key;
                     }
                 }
             }

@@ -10,7 +10,7 @@ namespace LetsCreateZeldaDX.Components
 {
     public class Sprite : Component
     {
-        private Texture2D texture;
+        private Texture2D _texture;
         public int Width { get; private set; }
         public int Height { get; private set; }
         public Vector2 Position { get; private set; }
@@ -22,10 +22,10 @@ namespace LetsCreateZeldaDX.Components
 
         public Sprite(Texture2D texture, int width, int height, Vector2 position)
         {
-            this.texture = texture;
-            this.Width = width;
-            this.Height = height;
-            this.Position = position;
+            _texture = texture;
+            Width = width;
+            Height = height;
+            Position = position;
         }
 
         public override void Update(double gameTime)
@@ -35,13 +35,21 @@ namespace LetsCreateZeldaDX.Components
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            var camera = GetComponent<Camera>(ComponentType.Camera);
+            Vector2 position; 
+
+            if (!(camera != null && camera.GetPosition(Position, out position)))
+            {
+                position = Position;
+            }
+
             var animation = GetComponent<Animation>(ComponentType.Animation);
 
             if (animation != null)
             {
                 spriteBatch.Draw(
-                    texture
-                    , new Rectangle((int)Position.X, (int)Position.Y, Width, Height)
+                    _texture
+                    , new Rectangle((int)position.X, (int)position.Y, Width, Height)
                     , animation.TextureRectangle
                     , Color.White
                     );
@@ -49,8 +57,8 @@ namespace LetsCreateZeldaDX.Components
             else
             {
                 spriteBatch.Draw(
-                    texture
-                    , new Rectangle((int)Position.X, (int)Position.Y, Width, Height)
+                    _texture
+                    , new Rectangle((int)position.X, (int)position.Y, Width, Height)
                     , Color.White 
                     );
             }

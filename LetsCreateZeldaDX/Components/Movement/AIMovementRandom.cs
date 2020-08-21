@@ -11,10 +11,10 @@ namespace LetsCreateZeldaDX.Components.Movement
 {
     public class AIMovementRandom : Component
     {
-        private Direction currentDirection;
-        private readonly int frequency;
-        private double counter;
-        private float speed;
+        private Direction _currentDirection;
+        private readonly int _frequency;
+        private double _counter;
+        private float _speed;
 
         public override ComponentType ComponentType
         {
@@ -25,8 +25,8 @@ namespace LetsCreateZeldaDX.Components.Movement
         #region Constructores
         public AIMovementRandom(int frequency, float speed = 1.5f)
         {
-            this.frequency = frequency;
-            this.speed = speed;
+            _frequency = frequency;
+            _speed = speed;
             ChangeDirection();
         }
         #endregion
@@ -40,8 +40,8 @@ namespace LetsCreateZeldaDX.Components.Movement
                 return;
             }
 
-            counter += gameTime;
-            if (counter > frequency)
+            _counter += gameTime;
+            if (_counter > _frequency)
             {
                 ChangeDirection();
             }
@@ -51,22 +51,22 @@ namespace LetsCreateZeldaDX.Components.Movement
             var x = 0f;
             var y = 0f;
 
-            switch (currentDirection)
+            switch (_currentDirection)
             {
                 case Direction.Up:
-                    y = speed * -1;
+                    y = _speed * -1;
                     break;
 
                 case Direction.Down:
-                    y = speed;
+                    y = _speed;
                     break;
 
                 case Direction.Left:
-                    x = speed * -1;
+                    x = _speed * -1;
                     break;
 
                 case Direction.Right:
-                    x = speed;
+                    x = _speed;
                     break;
                 default:
                     return;
@@ -90,8 +90,8 @@ namespace LetsCreateZeldaDX.Components.Movement
         #region Funcionamiento de la IA
         private void ChangeDirection()
         {
-            counter = 0;
-            currentDirection = (Direction)ManagerFunction.Random(0, 3);
+            _counter = 0;
+            _currentDirection = (Direction)ManagerFunction.Random(0, 3);
         }
         #endregion
     }

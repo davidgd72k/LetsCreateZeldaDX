@@ -13,21 +13,21 @@ namespace LetsCreateZeldaDX
     public class BaseObject
     {
         public int Id { get; set; }
-        private readonly List<Component> components;
+        private readonly List<Component> _components;
 
         public BaseObject()
         {
-            components = new List<Component>();
+            _components = new List<Component>();
         }
 
         public TComponentType GetComponent<TComponentType>(ComponentType componentType) where TComponentType : Component
         {
-            return components.Find(c => c.ComponentType == componentType) as TComponentType;
+            return _components.Find(c => c.ComponentType == componentType) as TComponentType;
         }
 
         public void AddComponent(Component component)
         {
-            components.Add(component);
+            _components.Add(component);
             component.Initialize(this);
         }
 
@@ -42,12 +42,12 @@ namespace LetsCreateZeldaDX
 
         public void RemoveComponent(Component component)
         {
-            components.Remove(component);
+            _components.Remove(component);
         }
 
         public void Update(double gameTime)
         {
-            foreach(var component in components)
+            foreach(var component in _components)
             {
                 component.Update(gameTime);
             }
@@ -55,7 +55,7 @@ namespace LetsCreateZeldaDX
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (var component in components)
+            foreach (var component in _components)
             {
                 component.Draw(spriteBatch);
             }

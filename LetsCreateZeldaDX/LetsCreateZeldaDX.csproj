@@ -48,6 +48,7 @@
     <Compile Include="BaseObject.cs" />
     <Compile Include="Component.cs" />
     <Compile Include="Components\Animation.cs" />
+    <Compile Include="Components\Camera.cs" />
     <Compile Include="Components\Collision.cs" />
     <Compile Include="Components\Enemies\Octorok.cs" />
     <Compile Include="Components\Enemies\OctorokBullet.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Components\Sprite.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Manager\ManagerCamera.cs" />
     <Compile Include="Manager\ManagerFunction.cs" />
     <Compile Include="Manager\ManagerInput.cs" />
     <Compile Include="Manager\ManagerMap.cs" />

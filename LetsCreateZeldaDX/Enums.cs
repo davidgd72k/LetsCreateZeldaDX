@@ -6,6 +6,7 @@
     , Collision
     , AIMovement
     , EnemyOctorok
+    , Camera
 }
 
 public enum Input

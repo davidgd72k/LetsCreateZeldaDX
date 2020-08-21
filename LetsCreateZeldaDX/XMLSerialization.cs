@@ -26,9 +26,7 @@ namespace LetsCreateZeldaDX
             catch (Exception)
             {
                 throw;
-            }
-
-            return false;
+            }            
         }
     }
 }

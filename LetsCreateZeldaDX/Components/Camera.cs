@@ -9,27 +9,27 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace LetsCreateZeldaDX.Components
 {
-    public class Collision : Component
+    public class Camera : Component
     {
         #region Variables
-        private ManagerMap _managerMap;
+        private ManagerCamera _managerCamera;
         #endregion
 
         #region Propiedades
         public override ComponentType ComponentType
         {
-            get { return ComponentType.Collision; }
-        }
-        #endregion
-        
-        #region Constructores
-        public Collision(ManagerMap managerMap)
-        {
-            _managerMap = managerMap;
+            get { return ComponentType.Camera; }
         }
         #endregion
 
-        #region Main Methods
+        #region Constructores
+        public Camera(ManagerCamera camera)
+        {
+            _managerCamera = camera;
+        }
+        #endregion
+
+        #region Main methods
         public override void Update(double gameTime)
         {
             
@@ -41,17 +41,15 @@ namespace LetsCreateZeldaDX.Components
         }
         #endregion
 
-        #region Other methods
-        public bool CheckCollision(Rectangle rectangle, bool fixBox = true)
+        public bool GetPosition(Vector2 position, out Vector2 newPosition)
         {
-            rectangle = new Rectangle(
-                (int) (rectangle.X + (rectangle.Width * 0.4) / 2)
-                , (int) (rectangle.Y + rectangle.Height * 0.5)
-                , (int) (rectangle.Width * 0.6)
-                , (int) (rectangle.Height * 0.5)
-                );
-            return _managerMap.CheckCollision(rectangle);
+            newPosition = _managerCamera.WorldToScreenPosition(position);
+            return _managerCamera.InScreenCheck(newPosition);
         }
-        #endregion
+
+        public void MoveCamera(Direction direction)
+        {
+            _managerCamera.Move(direction);
+        }
     }
 }

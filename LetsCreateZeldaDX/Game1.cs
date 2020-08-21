@@ -34,12 +34,13 @@ namespace LetsCreateZeldaDX
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        private BaseObject player;
-        private BaseObject testNPC;
-        private BaseObject testEnemy;
+        private BaseObject _player;
+        private BaseObject _testNPC;
+        private BaseObject _testEnemy;
 
-        private ManagerInput managerInput;
-        private ManagerMap managerMap;
+        private ManagerInput _managerInput;
+        private ManagerMap _managerMap;
+        private ManagerCamera _managerCamera;
 
         public Game1()
         {
@@ -58,12 +59,13 @@ namespace LetsCreateZeldaDX
         /// </summary>
         protected override void Initialize()
         {            
-            player = new BaseObject();
-            testNPC = new BaseObject();
-            testEnemy = new BaseObject();
+            _player = new BaseObject();
+            _testNPC = new BaseObject();
+            _testEnemy = new BaseObject();
 
-            managerInput = new ManagerInput();
-            managerMap = new ManagerMap("test");
+            _managerInput = new ManagerInput();
+            _managerCamera = new ManagerCamera();
+            _managerMap = new ManagerMap("test", _managerCamera);
             
             base.Initialize();
         }
@@ -77,23 +79,26 @@ namespace LetsCreateZeldaDX
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             
-            player.AddComponent(new Sprite(Content.Load<Texture2D>("Sprites/link_full"), 16, 16, new Vector2(50, 60)));
-            player.AddComponent(new PlayerInput());
-            player.AddComponent(new Animation(16, 16));
-            player.AddComponent(new Collision(managerMap));
+            _player.AddComponent(new Sprite(Content.Load<Texture2D>("Sprites/link_full"), 16, 16, new Vector2(50, 60)));
+            _player.AddComponent(new PlayerInput());
+            _player.AddComponent(new Animation(16, 16));
+            _player.AddComponent(new Collision(_managerMap));
+            _player.AddComponent(new Camera(_managerCamera));
 
-            testNPC.AddComponent(new Sprite(Content.Load<Texture2D>("Sprites/Marin"), 16, 16, new Vector2(60, 20)));
-            testNPC.AddComponent(new AIMovementRandom(200));
-            testNPC.AddComponent(new Animation(16, 16));
-            testNPC.AddComponent(new Collision(managerMap));
+            _testNPC.AddComponent(new Sprite(Content.Load<Texture2D>("Sprites/Marin"), 16, 16, new Vector2(60, 20)));
+            _testNPC.AddComponent(new AIMovementRandom(200));
+            _testNPC.AddComponent(new Animation(16, 16));
+            _testNPC.AddComponent(new Collision(_managerMap));
+            _testNPC.AddComponent(new Camera(_managerCamera));
 
-            testEnemy.AddComponent(new Sprite(Content.Load<Texture2D>("Sprites/Octorok"), 16, 16, new Vector2(80, 20)));
-            testEnemy.AddComponent(new AIMovementRandom(1000, 0.5f));
-            testEnemy.AddComponent(new Animation(16, 16));
-            testEnemy.AddComponent(new Collision(managerMap));
-            testEnemy.AddComponent(new Octorok(player, Content.Load<Texture2D>("Sprites/Octorok_bullet"), managerMap));
+            _testEnemy.AddComponent(new Sprite(Content.Load<Texture2D>("Sprites/Octorok"), 16, 16, new Vector2(80, 20)));
+            _testEnemy.AddComponent(new AIMovementRandom(1000, 0.5f));
+            _testEnemy.AddComponent(new Animation(16, 16));
+            _testEnemy.AddComponent(new Collision(_managerMap));
+            _testEnemy.AddComponent(new Octorok(_player, Content.Load<Texture2D>("Sprites/Octorok_bullet"), _managerMap));
+            _testEnemy.AddComponent(new Camera(_managerCamera));
 
-            managerMap.LoadContent(Content);
+            _managerMap.LoadContent(Content);
         }
 
         /// <summary>
@@ -115,13 +120,14 @@ namespace LetsCreateZeldaDX
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            managerInput.Update(gameTime.ElapsedGameTime.Milliseconds);
+            _managerInput.Update(gameTime.ElapsedGameTime.Milliseconds);
+            _managerCamera.Update(gameTime.ElapsedGameTime.Milliseconds);
 
-            player.Update(gameTime.ElapsedGameTime.Milliseconds);
-            testNPC.Update(gameTime.ElapsedGameTime.Milliseconds);
-            testEnemy.Update(gameTime.ElapsedGameTime.Milliseconds);            
+            _player.Update(gameTime.ElapsedGameTime.Milliseconds);
+            _testNPC.Update(gameTime.ElapsedGameTime.Milliseconds);
+            _testEnemy.Update(gameTime.ElapsedGameTime.Milliseconds);            
 
-            managerMap.Update(gameTime.ElapsedGameTime.Milliseconds);
+            _managerMap.Update(gameTime.ElapsedGameTime.Milliseconds);
 
             base.Update(gameTime);
         }
@@ -137,11 +143,11 @@ namespace LetsCreateZeldaDX
             // TODO: Add your drawing code here
             spriteBatch.Begin();
 
-            managerMap.Draw(spriteBatch);
+            _managerMap.Draw(spriteBatch);
 
-            player.Draw(spriteBatch);
-            testNPC.Draw(spriteBatch);
-            testEnemy.Draw(spriteBatch);
+            _player.Draw(spriteBatch);
+            _testNPC.Draw(spriteBatch);
+            _testEnemy.Draw(spriteBatch);
 
             spriteBatch.End();
 

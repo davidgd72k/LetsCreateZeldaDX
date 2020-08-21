@@ -60,8 +60,27 @@ namespace LetsCreateZeldaDX.Components
             {
                 sprite.Move(x, y);
             }
+
+            var camera = GetComponent<Camera>(ComponentType.Camera);
+            if (camera == null)
+            {
+                return;
+            }
+            Vector2 position;
+            if (!camera.GetPosition(sprite.Position, out position))
+            {
+                var animation = GetComponent<Animation>(ComponentType.Animation);
+
+                camera.MoveCamera(animation.CurrentDirection);
+            }
         }
 
+        private void CheckCamera(Direction direction)
+        {
+
+        }
+
+        #region Main methods
         public override void Update(double gameTime)
         {
             
@@ -71,5 +90,6 @@ namespace LetsCreateZeldaDX.Components
         {
             
         }
+        #endregion
     }
 }

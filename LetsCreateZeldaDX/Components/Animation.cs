@@ -18,34 +18,34 @@ namespace LetsCreateZeldaDX.Components
         public Rectangle TextureRectangle { get; private set; }
         public Direction CurrentDirection;
 
-        private int width;
-        private int height;
-        private State currentState;
-        private double counter;
-        private int animationIndex;
+        private int _width;
+        private int _height;
+        private State _currentState;
+        private double _counter;
+        private int _animationIndex;
 
         public Animation(int width, int height)
         {
-            this.width = width;
-            this.height = height;
-            counter = 0;
-            animationIndex = 0;
-            currentState = State.Standing;
+            _width = width;
+            _height = height;
+            _counter = 0;
+            _animationIndex = 0;
+            _currentState = State.Standing;
             TextureRectangle = new Rectangle(0, 0, width, height);
         }
 
         public override void Update(double gameTime)
         {
-            switch (currentState)
+            switch (_currentState)
             {
                 case State.Walking:
 
-                    counter += gameTime;
+                    _counter += gameTime;
 
-                    if (counter > 250)
+                    if (_counter > 250)
                     {
                         ChangeState();
-                        counter = 0;
+                        _counter = 0;
                     }
 
                     break;
@@ -63,42 +63,42 @@ namespace LetsCreateZeldaDX.Components
             {
                 case Direction.Up:
 
-                    TextureRectangle = new Rectangle(width * animationIndex, height, width, height);
+                    TextureRectangle = new Rectangle(_width * _animationIndex, _height, _width, _height);
 
                     break;
 
                 case Direction.Down:
 
-                    TextureRectangle = new Rectangle(width * animationIndex, 0, width, height);
+                    TextureRectangle = new Rectangle(_width * _animationIndex, 0, _width, _height);
 
                     break;
 
                 case Direction.Left:
 
-                    TextureRectangle = new Rectangle(width * animationIndex, height * 2, width, height);
+                    TextureRectangle = new Rectangle(_width * _animationIndex, _height * 2, _width, _height);
 
                     break;
 
                 case Direction.Right:
 
-                    TextureRectangle = new Rectangle(width * animationIndex, height * 3, width, height);
+                    TextureRectangle = new Rectangle(_width * _animationIndex, _height * 3, _width, _height);
 
                     break;
             }
 
-            animationIndex = animationIndex == 0 ? 1 : 0;
-            currentState = State.Standing;
+            _animationIndex = _animationIndex == 0 ? 1 : 0;
+            _currentState = State.Standing;
         }
 
         public void ResetCounter(State state, Direction direction)
         {
             if (CurrentDirection != direction)
             {
-                counter = 1000;
-                animationIndex = 0;
+                _counter = 1000;
+                _animationIndex = 0;
             }
 
-            currentState = state;
+            _currentState = state;
             CurrentDirection = direction;
         }
     }

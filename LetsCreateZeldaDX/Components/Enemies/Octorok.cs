@@ -10,12 +10,12 @@ namespace LetsCreateZeldaDX.Components.Enemies
 {
     public class Octorok : Component
     {
-        private BaseObject player;
-        private List<OctorokBullet> bullets;
-        private double counter;
-        private int cooldown;
-        private Texture2D bulletTexture;
-        private ManagerMap map;
+        private BaseObject _player;
+        private List<OctorokBullet> _bullets;
+        private double _counter;
+        private int _cooldown;
+        private Texture2D _bulletTexture;
+        private ManagerMap _map;
 
         public override ComponentType ComponentType
         {
@@ -24,35 +24,35 @@ namespace LetsCreateZeldaDX.Components.Enemies
 
         public Octorok(BaseObject player, Texture2D bulletTexture, ManagerMap map, int cooldown = 1000)
         {
-            this.player = player;
-            this.bullets = new List<OctorokBullet>();
-            this.cooldown = cooldown;
-            this.counter = 0;
-            this.bulletTexture = bulletTexture;
-            this.map = map;
+            _player = player;
+            _bullets = new List<OctorokBullet>();
+            _cooldown = cooldown;
+            _counter = 0;
+            _bulletTexture = bulletTexture;
+            _map = map;
         }
 
         public override void Update(double gameTime)
         {
-            counter += gameTime;
+            _counter += gameTime;
 
-            for (int i = 0; i < bullets.Count; i++)
+            for (int i = 0; i < _bullets.Count; i++)
             {
-                bullets[i].Update(gameTime);
+                _bullets[i].Update(gameTime);
 
-                if (bullets[i].Dead)
+                if (_bullets[i].Dead)
                 {
-                    bullets.RemoveAt(i);
+                    _bullets.RemoveAt(i);
                 }
             }
 
-            if (counter < cooldown)
+            if (_counter < _cooldown)
             {
                 return;
             }
 
             var sprite = GetComponent<Sprite>(ComponentType.Sprite);
-            var playerSprite = player.GetComponent<Sprite>(ComponentType.Sprite);
+            var playerSprite = _player.GetComponent<Sprite>(ComponentType.Sprite);
             var animation = GetComponent<Animation>(ComponentType.Animation);
             if (sprite == null || animation == null || playerSprite == null)
             {
@@ -98,12 +98,12 @@ namespace LetsCreateZeldaDX.Components.Enemies
                     break;
             }
 
-            counter = 0;
+            _counter = 0;
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            foreach (var octorokBullet in bullets)
+            foreach (var octorokBullet in _bullets)
             {
                 octorokBullet.Draw(spriteBatch);
             }
@@ -112,7 +112,7 @@ namespace LetsCreateZeldaDX.Components.Enemies
         private void NewBullet(Direction direction)
         {
             var sprite = GetComponent<Sprite>(ComponentType.Sprite);
-            bullets.Add(new OctorokBullet(new Sprite(bulletTexture, 10, 10, sprite.Position), new Collision(map), player, direction));
+            _bullets.Add(new OctorokBullet(new Sprite(_bulletTexture, 10, 10, sprite.Position), new Collision(_map), _player, direction));
         }
     }
 }

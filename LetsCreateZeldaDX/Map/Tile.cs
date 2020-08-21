@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using LetsCreateZeldaDX.Manager;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -23,16 +24,17 @@ namespace LetsCreateZeldaDX.Map
 
         public string TextureName { get; set; }
 
-        private Texture2D texture;
-        private double counter;
-        private int animationIndex;
+        protected Texture2D _texture;
+        public ManagerCamera ManagerCamera { get; set; }
+        private double _counter;
+        private int _animationIndex;
 
         public Tile()
         {
 
         }
 
-        public Tile(int xPos, int yPos, int zPos, List<TileFrame> tileFrames, int animationSpeed, string textureName)
+        public Tile(int xPos, int yPos, int zPos, List<TileFrame> tileFrames, int animationSpeed, string textureName, ManagerCamera managerCamera)
         {
             XPos = xPos;
             YPos = yPos;
@@ -40,14 +42,16 @@ namespace LetsCreateZeldaDX.Map
 
             TileFrames = tileFrames;
             AnimationSpeed = animationSpeed;
-            animationIndex = 0;
+            _animationIndex = 0;
 
             TextureName = textureName;
+
+            ManagerCamera = managerCamera;
         }
 
         public void LoadContent(ContentManager content)
         {
-            texture = content.Load<Texture2D>(TextureName);
+            _texture = content.Load<Texture2D>(TextureName);
         }
 
         public void Update(double gameTime)
@@ -57,26 +61,31 @@ namespace LetsCreateZeldaDX.Map
                 return;
             }
 
-            counter += gameTime;
-            if (counter > AnimationSpeed)
+            _counter += gameTime;
+            if (_counter > AnimationSpeed)
             {
-                counter = 0;
-                animationIndex++;
-                if (animationIndex >= TileFrames.Count)
+                _counter = 0;
+                _animationIndex++;
+                if (_animationIndex >= TileFrames.Count)
                 {
-                    animationIndex = 0;
+                    _animationIndex = 0;
                 }
             }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(
-                texture
-                , new Rectangle(XPos * Width, YPos * Height, Width, Height)
-                , new Rectangle(TileFrames[animationIndex].TextureXPos * Width, TileFrames[animationIndex].TextureYPos * Height, Width, Height)
-                , Color.White
-                );
+            var position = ManagerCamera.WorldToScreenPosition(new Vector2(XPos * Width, YPos * Height));
+
+            if (ManagerCamera.InScreenCheck(position))
+            {
+                spriteBatch.Draw(
+                    _texture
+                    , new Rectangle(XPos * Width, YPos * Height, Width, Height)
+                    , new Rectangle(TileFrames[_animationIndex].TextureXPos * Width, TileFrames[_animationIndex].TextureYPos * Height, Width, Height)
+                    , Color.White
+                    );
+            }
         }
     }
 }

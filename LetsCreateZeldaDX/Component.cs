@@ -13,27 +13,27 @@ namespace LetsCreateZeldaDX
     /// </summary>
     public abstract class Component
     {
-        private BaseObject baseObject;
+        private BaseObject _baseObject;
         public abstract ComponentType ComponentType { get; }
 
         public void Initialize(BaseObject baseObject)
         {
-            this.baseObject = baseObject;
+            _baseObject = baseObject;
         }
 
         public int GetOwnerId()
         {
-            return baseObject.Id;
+            return _baseObject.Id;
         }
 
         public void RemoveMe()
         {
-            baseObject.RemoveComponent(this);
+            _baseObject.RemoveComponent(this);
         }
 
         public TComponentType GetComponent<TComponentType>(ComponentType componentType) where TComponentType : Component
         {
-            return baseObject == null ? null : baseObject.GetComponent<TComponentType>(componentType);
+            return _baseObject == null ? null : _baseObject.GetComponent<TComponentType>(componentType);
         }
 
         public abstract void Update(double gameTime);
