@@ -28,7 +28,7 @@ namespace LetsCreateZeldaDX.Manager
         #region Constructores
         public ManagerCamera()
         {
-            _speed = 2f;
+            _speed = 5f;
             _position = new Vector2(0, 0);
         }
         #endregion

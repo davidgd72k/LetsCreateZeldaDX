@@ -31,7 +31,7 @@ namespace LetsCreateZeldaDX.Map
         {
             var position = ManagerCamera.WorldToScreenPosition(new Vector2(Rectangle.X, Rectangle.Y));
 
-            return ManagerCamera.InScreenCheck(position) && Rectangle.Intersects(rectangle);
+            return ManagerCamera.InScreenCheck(position) && rectangle.Intersects( new Rectangle((int)position.X, (int)position.Y, 16, 16));
         }
 
     }

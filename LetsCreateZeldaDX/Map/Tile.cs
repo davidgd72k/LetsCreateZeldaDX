@@ -29,6 +29,11 @@ namespace LetsCreateZeldaDX.Map
         private double _counter;
         private int _animationIndex;
 
+        public Vector2 Position
+        {
+            get { return new Vector2(XPos * 16, YPos * 16); }
+        }
+
         public Tile()
         {
 
@@ -75,13 +80,13 @@ namespace LetsCreateZeldaDX.Map
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            var position = ManagerCamera.WorldToScreenPosition(new Vector2(XPos * Width, YPos * Height));
+            var position = ManagerCamera.WorldToScreenPosition(Position);
 
-            if (ManagerCamera.InScreenCheck(position))
+            if (ManagerCamera.InScreenCheck(Position))
             {
                 spriteBatch.Draw(
                     _texture
-                    , new Rectangle(XPos * Width, YPos * Height, Width, Height)
+                    , new Rectangle((int)position.X, (int)position.Y, Width, Height)
                     , new Rectangle(TileFrames[_animationIndex].TextureXPos * Width, TileFrames[_animationIndex].TextureYPos * Height, Width, Height)
                     , Color.White
                     );

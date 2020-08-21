@@ -384,4 +384,21 @@
     <AnimationSpeed>200</AnimationSpeed>
     <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
   </Tile>
+  
+  <!-- Otras zonas -->
+  
+  <Tile>
+    <XPos>3</XPos>
+    <YPos>10</YPos>
+    <ZPos>1</ZPos>    
+    <TileFrames>
+      <TileFrame>
+        <TextureXPos>1</TextureXPos>
+        <TextureYPos>6</TextureYPos>
+      </TileFrame>
+    </TileFrames>
+    <AnimationSpeed>0</AnimationSpeed>
+    <TextureName>Tileset/zeldaDX_overworld_tileset</TextureName>
+  </Tile>
+  
 </ArrayOfTile>
