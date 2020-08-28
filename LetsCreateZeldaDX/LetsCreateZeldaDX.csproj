@@ -61,6 +61,7 @@
     <Compile Include="Manager\ManagerFunction.cs" />
     <Compile Include="Manager\ManagerInput.cs" />
     <Compile Include="Manager\ManagerMap.cs" />
+    <Compile Include="Map\Entities.cs" />
     <Compile Include="Map\Tile.cs" />
     <Compile Include="Map\TileCollision.cs" />
     <Compile Include="Map\TileFrame.cs" />

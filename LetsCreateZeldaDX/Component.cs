@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace LetsCreateZeldaDX
 {
-    // TODO: poner descripción de QUE hace esta clase.
     /// <summary>
-    /// 
+    /// Componente esencial para la creación de otros tipos de componentes para los BaseObject.
+    /// Se usa heredando esta clase.
     /// </summary>
     public abstract class Component
     {
@@ -31,6 +31,12 @@ namespace LetsCreateZeldaDX
             _baseObject.RemoveComponent(this);
         }
 
+        /// <summary>
+        /// Comprueba si el BaseObject contiene dicho componente y lo devuelve.
+        /// </summary>
+        /// <typeparam name="TComponentType">El componente que se le indique.</typeparam>
+        /// <param name="componentType">Nombre identificador del componente.</param>
+        /// <returns>Si el BaseObject contiene ese componente.</returns>
         public TComponentType GetComponent<TComponentType>(ComponentType componentType) where TComponentType : Component
         {
             return _baseObject == null ? null : _baseObject.GetComponent<TComponentType>(componentType);
