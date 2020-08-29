@@ -61,6 +61,7 @@
     <Compile Include="Manager\ManagerFunction.cs" />
     <Compile Include="Manager\ManagerInput.cs" />
     <Compile Include="Manager\ManagerMap.cs" />
+    <Compile Include="Manager\ManagerScreen.cs" />
     <Compile Include="Map\Entities.cs" />
     <Compile Include="Map\Tile.cs" />
     <Compile Include="Map\TileCollision.cs" />
@@ -68,6 +69,8 @@
     <Compile Include="MyEventArgs\NewInputEventArgs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\Screen.cs" />
+    <Compile Include="Screens\ScreenWorld.cs" />
     <Compile Include="XMLSerialization.cs" />
   </ItemGroup>
   <ItemGroup>

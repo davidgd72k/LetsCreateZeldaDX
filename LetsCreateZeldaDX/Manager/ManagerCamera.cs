@@ -58,7 +58,7 @@ namespace LetsCreateZeldaDX.Manager
                 _position.Y += _speed;
             }
 
-            if (ManagerFunction.Distance(_position, _moveToPosition) < 2)
+            if (ManagerFunction.Distance(_position, _moveToPosition) < 5)
             {
                 _position = _moveToPosition;
             }

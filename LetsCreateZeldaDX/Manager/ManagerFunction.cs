@@ -13,7 +13,7 @@ namespace LetsCreateZeldaDX.Manager
 
         public static int Random(int min, int max)
         {
-            return Rnd.Next(min, max+1);
+            return Rnd.Next(min, max + 1);
         }
 
         public static double Distance(Vector2 positionOne, Vector2 positionTwo)
