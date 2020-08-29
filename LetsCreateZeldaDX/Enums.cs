@@ -16,6 +16,7 @@ public enum Input
     , Up
     , Down
     , None
+    , Start
 }
 
 public enum Direction

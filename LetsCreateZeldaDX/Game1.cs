@@ -1,17 +1,9 @@
 ﻿#region Using zone
-
-#region System
 using System;
 using System.Collections.Generic;
-#endregion
-
-#region XNA
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-#endregion
-
-#region LetsCreateZeldaDX
 using LetsCreateZeldaDX.Components;
 using LetsCreateZeldaDX.Components.Movement;
 using LetsCreateZeldaDX.Manager;
@@ -20,10 +12,8 @@ using LetsCreateZeldaDX.Map;
 using LetsCreateZeldaDX.Screens;
 #endregion
 
-#endregion
-
 #region TODO List
-// TODO: seguir del vídeo Parte 10 desde el min. 01:27.
+// TODO: seguir del vídeo Parte 10 desde el min. 04:55.
 #endregion
 
 namespace LetsCreateZeldaDX
@@ -36,9 +26,10 @@ namespace LetsCreateZeldaDX
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        #region Variables
         private ManagerInput _managerInput;
         private ManagerScreen _managerScreen;
-        
+        #endregion
 
         public Game1()
         {
@@ -47,7 +38,7 @@ namespace LetsCreateZeldaDX
 
             this.graphics.PreferredBackBufferWidth = 160;
             this.graphics.PreferredBackBufferHeight = 128;            
-        }
+        }        
 
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
@@ -73,7 +64,8 @@ namespace LetsCreateZeldaDX
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             _managerScreen = new ManagerScreen(Content);
-            _managerScreen.LoadNewScreen(new ScreenWorld(_managerScreen));
+            //_managerScreen.LoadNewScreen(new ScreenWorld(_managerScreen));
+            _managerScreen.LoadNewScreen(new ScreenStart(_managerScreen));
         }
 
         /// <summary>

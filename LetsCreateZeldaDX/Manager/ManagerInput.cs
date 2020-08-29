@@ -70,6 +70,7 @@ namespace LetsCreateZeldaDX.Manager
             CheckKeyState(Keys.Right, Input.Right);
             CheckKeyState(Keys.Up, Input.Up);
             CheckKeyState(Keys.Down, Input.Down);
+            CheckKeyState(Keys.S, Input.Start);
 
             _lastKeyState = _keyState;
         }
