@@ -13,7 +13,7 @@ using LetsCreateZeldaDX.Screens;
 #endregion
 
 #region TODO List
-// TODO: seguir del vídeo Parte 10 desde el min. 04:55.
+// TODO: seguir del vídeo Parte 10 desde el min. 06:52.
 #endregion
 
 namespace LetsCreateZeldaDX
@@ -74,7 +74,7 @@ namespace LetsCreateZeldaDX
         /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+            
         }
 
         /// <summary>
@@ -103,7 +103,6 @@ namespace LetsCreateZeldaDX
         {
             GraphicsDevice.Clear(new Color(192, 207, 161));
 
-            // TODO: Add your drawing code here
             spriteBatch.Begin();
 
             _managerScreen.Draw(spriteBatch);

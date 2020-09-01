@@ -90,10 +90,16 @@ namespace LetsCreateZeldaDX.Manager
             }
         }
 
+        /// <summary>
+        /// Comprueba que la posición del elemento esta dentro de la pantalla.
+        /// </summary>
+        /// <param name="vector">Posición del elemento.</param>
+        /// <returns>Si el elemento esta dentro de la pantalla.</returns>
         public bool InScreenCheck(Vector2 vector)
         {
-            return ((vector.X > _position.X - 50 && vector.X < _position.X + 160 + 50) &&
-                (vector.Y > _position.Y - 50 && vector.Y < _position.Y + 128 + 50));
+            int outScreenMargin = 8;
+            return ((vector.X > _position.X - outScreenMargin && vector.X < _position.X + 160 + outScreenMargin) &&
+                    (vector.Y > _position.Y - outScreenMargin && vector.Y < _position.Y + 128 + outScreenMargin));
         }
 
         public Vector2 WorldToScreenPosition(Vector2 position)

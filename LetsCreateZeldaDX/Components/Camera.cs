@@ -51,5 +51,15 @@ namespace LetsCreateZeldaDX.Components
         {
             _managerCamera.Move(direction);
         }
+
+        public bool InsideScreen(Vector2 position)
+        {
+            return _managerCamera.InScreenCheck(position);
+        }
+
+        public bool CameraInTransition()
+        {
+            return _managerCamera.Locked;
+        }
     }
 }

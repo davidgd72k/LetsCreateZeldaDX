@@ -24,7 +24,6 @@ namespace LetsCreateZeldaDX.Components
         private void ManagerInput_FireNewInput(object sender, MyEventArgs.NewInputEventArgs e)
         {
             var sprite = GetComponent<Sprite>(ComponentType.Sprite);
-
             if (sprite == null)
             {
                 return;
@@ -35,37 +34,41 @@ namespace LetsCreateZeldaDX.Components
             var x = 0f;
             var y = 0f;
 
-            switch (e.Input)
+            var camera = GetComponent<Camera>(ComponentType.Camera);
+            if (camera == null)
             {
-                case Input.Up:
-                    y = -1.5f;
-                    break;
+                return;
+            }
 
-                case Input.Down:
-                    y = 1.5f;
-                    break;
+            if (!camera.CameraInTransition())
+            {
+                switch (e.Input)
+                {
+                    case Input.Up:
+                        y = -1.5f;
+                        break;
 
-                case Input.Left:
-                    x = -1.5f;
-                    break;
+                    case Input.Down:
+                        y = 1.5f;
+                        break;
 
-                case Input.Right:
-                    x = 1.5f;
-                    break;
-                default:
-                    return;
+                    case Input.Left:
+                        x = -1.5f;
+                        break;
+
+                    case Input.Right:
+                        x = 1.5f;
+                        break;
+                    default:
+                        return;
+                }
             }
 
             if (collision == null || !collision.CheckCollision(new Rectangle((int) (sprite.Position.X + x), (int) (sprite.Position.Y + y), sprite.Width, sprite.Height)))
             {
                 sprite.Move(x, y);
             }
-
-            var camera = GetComponent<Camera>(ComponentType.Camera);
-            if (camera == null)
-            {
-                return;
-            }
+            
             Vector2 position;
             if (!camera.GetPosition(sprite.Position, out position))
             {

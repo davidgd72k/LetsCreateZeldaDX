@@ -31,7 +31,7 @@ namespace LetsCreateZeldaDX.Components
             _counter = 0;
             _animationIndex = 0;
             _currentState = State.Standing;
-            TextureRectangle = new Rectangle(0, 0, width, height);
+            //TextureRectangle = new Rectangle(0, 0, width, height);
         }
 
         public override void Update(double gameTime)
